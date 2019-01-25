@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header';
+import SignIn from './components/Pages/home/signin';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -8,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-
+        <SignIn />
 
 
         {/* <header className="App-header">
