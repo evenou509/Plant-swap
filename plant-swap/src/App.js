@@ -7,6 +7,8 @@ import Search from './components/Route/search';
 import Blog from './components/Route/blog';
 import Profile from './components/Route/profile';
 import Contact from './components/Route/contact';
+import Signup from './components/Route/signup';
+// import Signin from './components/signin';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import logo from './logo.svg';
 import './App.css';
@@ -17,13 +19,16 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-        <Header />
+        <Header/>
+      
         <Route exact path="/" component={Home} />
         <Route exact path="/swap" component={Swap} />
         <Route exact path="/search" component={Search} />
         <Route path="/blog" component={Blog} />
         <Route path="/profile" component={Profile} />
         <Route path="/contact" component={Contact} />
+        <Route path="/Signup" component={Contact} />
+
         </div>
         </Router>
 

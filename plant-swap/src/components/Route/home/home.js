@@ -5,30 +5,30 @@
 import React, { Component } from 'react';
 
 class Home extends Component {
-    state = {
-        email: '',
-        password: '',
-    }
+    // state = {
+    //     email: '',
+    //     password: '',
+    // }
 
-    handleInputChange = event => {
-        let value = event.target.value;
-        const name = event.target.email;
+    // handleInputChange = event => {
+    //     let value = event.target.value;
+    //     const name = event.target.email;
 
-        if(name === "password") {
-            value = value.substring(0, 15);
-        }
+    //     if(name === "password") {
+    //         value = value.substring(0, 15);
+    //     }
 
-        this.setState({
-            [name]: value
-        });
-    };
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // };
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-        if(!this.state.email || !this.state.password){
-            alert("Your email and password do not match")
-        }
-    }
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     if(!this.state.email || !this.state.password){
+    //         alert("Your email and password do not match")
+    //     }
+    // }
 
     render() {
         return(
@@ -36,7 +36,7 @@ class Home extends Component {
         {/* <p>
           Hello {this.state.firstName} {this.state.lastName}
         </p> */}
-        <form className="form">
+        {/* <form className="form">
           <input
             value={this.state.email}
             name="Email"
@@ -52,7 +52,8 @@ class Home extends Component {
             placeholder="Password"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
-        </form>
+          <button onClick>Sign Up</button>
+        </form> */}
 
 
         <section className="section">
