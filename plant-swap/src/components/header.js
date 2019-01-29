@@ -1,6 +1,32 @@
 import React, { Component } from 'react';
+// import signin from './Route/signin'
 
 class Header extends Component {
+    state = {
+        email: '',
+        password: '',
+    }
+
+    handleInputChange = event => {
+        let value = event.target.value;
+        const name = event.target.email;
+
+        if(name === "password") {
+            value = value.substring(0, 15);
+        }
+
+        this.setState({
+            [name]: value
+        });
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if(!this.state.email || !this.state.password){
+            alert("Your email and password do not match")
+        }
+    }
+
     render() {
         return (
             <header>
@@ -18,6 +44,31 @@ class Header extends Component {
                                 <a class="nav-item nav-link" href="/blog">Blog/News</a>
                                 <a class="nav-item nav-link" href="/profile">My Profile</a>
                                 <a class="nav-item nav-link" href="/contact">Contact Us</a>
+                                <ul className="nav">
+                                    <li className="nav-item">  <div>
+        {/* <p>
+          Hello {this.state.firstName} {this.state.lastName}
+        </p> */}
+        <form className="form">
+          <input
+            value={this.state.email}
+            name="Email"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Email"
+          />
+          <input
+            value={this.state.password}
+            name="password"
+            onChange={this.handleInputChange}
+            type="password"
+            placeholder="Password"
+          />
+          <button onClick={this.handleFormSubmit}>Submit</button>
+          <button onClick= "window.location.href='/plant-swap/src/components/signup.js'">Sign Up</button>
+        </form>
+      </div> </li>
+                                </ul>
                             </div>
                         </div>
                     </nav>
