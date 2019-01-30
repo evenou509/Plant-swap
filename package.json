@@ -1,0 +1,19 @@
+{
+  "name": "plant-swap",
+  "version": "1.0.0",
+  "description": "Plant swap app",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evenou509/Plant-swap.git"
+  },
+  "author": "Jean Fils-Aimes and Desiree Solomon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evenou509/Plant-swap/issues"
+  },
+  "homepage": "https://github.com/evenou509/Plant-swap#readme"
+}
