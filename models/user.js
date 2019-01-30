@@ -1,13 +1,34 @@
-const mySql =  require("mysql");
-
-const UserSchema = new Schema({
-  full_name: { type: String, required: true },
-  email: { type: String, required: true },
-  password: String,
-  zipCode: { type: String, required: true },
-  about: String
-});
-
-const User = 
-
-module.exports = User;
+module.exports = function(sequelize, DataTypes) {
+    var User = sequelize.define("User", {
+      full_name: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      zipCode: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      about: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+      }
+    }, {
+      classMethods: {
+        associate: function(models) {
+          User.hasOne(models.Plants);
+        }
+      }
+    });
+    return User;
+  };
