@@ -2,11 +2,11 @@
 var express = require('express');
 var session = require('express-session');
 var passport = require('./config/passport');
-const routes = require('./routes');
+const routes = require('./../../controllers/userController');
 
 
 // require("dot-env");
-var db = require('./models');
+var db = require('./../../models');
 
 var app = express();
 var PORT = process.env.PORT || 3000;

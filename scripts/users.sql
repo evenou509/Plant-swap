@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS users_db;
-CREATE DATABASE users_db;
+DROP DATABASE IF EXISTS plant_users_db;
+CREATE DATABASE plant_users_db;
