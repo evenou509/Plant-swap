@@ -2,7 +2,8 @@
 var express = require('express');
 var session = require('express-session');
 var passport = require('./config/passport');
-const routes = require('./../../controllers/userController');
+// const routes = require('./../../controllers/userController');
+const routes = require("../src/pages/api-routes/plant-api");
 
 
 // require("dot-env");
@@ -29,6 +30,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Routes
 app.use(routes);
+
 
 var syncOptions = { force: false };
 

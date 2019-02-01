@@ -9,7 +9,14 @@ class Search extends Component {
         results: [],
         error: ""
       };
-
+    componentDidMount() {
+        API.search()
+          .then(res => this.setState({ results: res.data }))
+          .catch(err => console.log(err));
+          console.log(this.state.results)
+          
+          console.log(this.state.search_input)
+      }
     handleInputChange = event => {
         this.setState({ search_input: event.target.value });
       };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/header';
+import Header from './components/header/header';
 // import SignIn from './components/Route/home/signin';
 import Home from './pages/home/home';
 import Swap from './pages/swap';
