@@ -27,6 +27,7 @@ class Search extends Component {
           console.log(this.state.results)
           console.log(this.state.search_input)
     
+          
       };
 
     render() {
