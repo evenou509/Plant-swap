@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Header from './components/header';
+import Header from './components/header/header';
 // import SignIn from './components/Route/home/signin';
 import Home from './pages/home/home';
 import Swap from './pages/swap';
-import Search from './pages/search';
+import Search from './pages/search/search';
 import Blog from './pages/blog';
 import Profile from './pages/profile';
 import Contact from './pages/contact';
