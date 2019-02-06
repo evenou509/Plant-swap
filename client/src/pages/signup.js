@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
+import API from '../utils/API';
+
 
 class Signup extends Component {
   state = {
-    fullName: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
-    confirmationPassword: '',
     zipCode: '',
     about: '',
   }
 
   handleInputChange = event => {
-    let value = event.target.value;
-    const name = event.target.email;
-
-    if (name === "password") {
-      value = value.substring(0, 15);
-    }
-
+    const {name, value} = event.target;
+ 
     this.setState({
       [name]: value
     });
@@ -25,9 +22,21 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (!this.state.email || !this.state.password) {
-      alert("Your email and password do not match")
-    }
+    console.log(this.state.firstName)
+    API.newUser({
+      first_name:this.state.firstName,
+      last_name:this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+      zipCode: this.state.zipCode,
+      about: this.state.about
+    }).then(
+      console.log("New User submitted")
+    ) 
+    // .catch(err => console.log(err));
+    // if (!this.state.email || !this.state.password) {
+    //   alert("Your email and password do not match")
+    // }
   }
 
   render() {
@@ -35,11 +44,18 @@ class Signup extends Component {
       <div>
         <form className="form">
           <input
-            value={this.state.fullName}
-            name="fullName"
+            value={this.state.firstName}
+            name="firstName"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Full Name"
+            placeholder="First Name"
+          />
+                    <input
+            value={this.state.lastName}
+            name="lastName"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Last Name"
           />
           <input
             value={this.state.email}
@@ -55,19 +71,19 @@ class Signup extends Component {
             type="password"
             placeholder="Password"
           />
-          <input
-            value={this.state.confirmationPassword}
-            name="confirmationPassword"
+           <input
+            value={this.state.zipCode}
+            name="zipCode"
             onChange={this.handleInputChange}
-            type="text"
-            placeholder="Conformation Password"
+            type="zipCode"
+            placeholder="Zip Code"
           />
           <input
             value={this.state.about}
             name="about"
             onChange={this.handleInputChange}
             type="about"
-            placeholder="about"
+            placeholder="About"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
           

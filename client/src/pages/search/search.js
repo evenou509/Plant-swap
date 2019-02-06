@@ -67,12 +67,12 @@ class Search extends Component {
             </form>
 
             <div>
-            {this.state.plantResults.forEach( plants =>(
-            <Cards
-            name= {plants.name}
-            description= {plants.description}/>
-            ))}
-            </div>
+           {this.state.plantResults.filter( plants => plants.name === this.state.search_input).map( plants =>(
+           <Cards
+           name= {plants.name}
+           description= {plants.description}/>
+           ))}
+           </div>
             </div>
         )
     }
