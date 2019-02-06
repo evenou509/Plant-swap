@@ -1,7 +1,14 @@
 const router = require("express").Router();
-const userRoutes = require("./user");
+const userController = require("../../controllers/userController");
 
-// Book routes
-router.use("/user", userRoutes);
+// route to sign up new user
+router.route("/")
+  .post(userController.create);
+
+// Matches with "/api/user/:id"
+router
+  .route("/users")
+  .get(userController.findById)
+  .put(userController.update);
 
 module.exports = router;
