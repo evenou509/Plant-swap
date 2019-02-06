@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import API from '../utils/API';
+import API from '../../utils/API';
+import "./signup.css";
 
 
 class Signup extends Component {
@@ -41,54 +42,79 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page-body">
+      <div className="container">
+      <div className="holder container">
         <form className="form">
-          <input
+          <div className="form-row">
+          <div className="col-md-5 mb-3">
+            <input className="form-control"
             value={this.state.firstName}
             name="firstName"
             onChange={this.handleInputChange}
             type="text"
             placeholder="First Name"
-          />
-                    <input
+            />
+            
+          </div>
+
+            <div className="col-md-5 mb-3">
+            <input className="form-control"
             value={this.state.lastName}
             name="lastName"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Last Name"
           />
-          <input
+           </div>
+          </div>
+
+          <div className="form-row">
+          <div className="col-md-5 mb-3">
+            <input className="form-control"
             value={this.state.email}
             name="Email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Email"
           />
-          <input
+          </div>
+          <div className="col-md-5 mb-3">
+            <input className="form-control"
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
             type="password"
             placeholder="Password"
           />
-           <input
+          </div>
+          </div>
+
+          <div className="form-row">
+          <div className="col-md-5 mb-3">
+            <input className="form-control"
             value={this.state.zipCode}
             name="zipCode"
             onChange={this.handleInputChange}
             type="zipCode"
             placeholder="Zip Code"
           />
-          <input
+         </div>
+         <div className="col-md-5 mb-3">
+            <input className="form-control"
             value={this.state.about}
             name="about"
             onChange={this.handleInputChange}
             type="about"
             placeholder="About"
           />
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          </div>
+          </div>
+          <button type="button" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
           
         </form>
-
+        </div>
+        </div>
       </div>
     )
   }

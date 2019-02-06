@@ -1,8 +1,10 @@
 // require("dotenv").config();
 var express = require('express');
-// var session = require('express-session');
-// var passport = require('./config/passport');
+var session = require('express-session');
+var passport = require('passport');
 const routes = require('./routes');
+const passportSetup = require('./config/passport-setup');
+const cookieSession = require('cookie-session');
 // const apiRoutes = require("./routes/api/user");
 
 
@@ -12,6 +14,9 @@ var db = require('./models');
 var app = express();
 var PORT = process.env.PORT || 5001;
 
+
+
+
 // Creating express app and configuring middleware needed for authentication
 app.use(express.urlencoded({ extended: true }));
 
@@ -19,9 +24,15 @@ app.use(express.json());
 // app.use(express.static("public"));
 
 // We need to use sessions to keep track of our user's login status
-// app.use(session({ secret: "insideredge", resave: true, saveUninitialized: true }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: "anyThing"
+}));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
