@@ -1,7 +1,7 @@
 // create a link to move to the swap page
 
 import React, { Component } from 'react';
-// import API from "../utils/API"
+import API from "../../utils/API"
 import axios from "axios";
 import Cards from "./card";
 import "./search.css";
@@ -28,7 +28,18 @@ class Search extends Component {
           .catch(err => console.log(err));
       }
 
-
+      addPlant = plants => {
+        // event.preventDefault();
+        API.savePlant({
+          user_id: "1",
+          plant_id: plants.id,
+          plant_name: plants.name
+        }).then(
+          console.log("plant submitted")
+        ) 
+  
+        
+      };
 
     handleInputChange = event => {
         this.setState({ search_input: event.target.value });
@@ -70,7 +81,9 @@ class Search extends Component {
            {this.state.plantResults.filter( plants => plants.name === this.state.search_input).map( plants =>(
            <Cards
            name= {plants.name}
-           description= {plants.description}/>
+           description= {plants.description}
+           onClick={() => this.addPlant(plants)}/>
+           
            ))}
            </div>
            </div>

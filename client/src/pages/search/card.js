@@ -11,7 +11,7 @@ function Cards (props){
          <p className="card-text">Description:</p> 
          <p className="card-text">{props.description}</p> 
          <span >
-        <button className="add"> Add to your List</button>
+        <button className="add" {...props}> Add to your List</button>
       </span>
          </div>
   </div>
