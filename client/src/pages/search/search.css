@@ -1,0 +1,47 @@
+.page-body{
+    background-color: lightblue;
+    height: 800px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 2px;
+    height: 400px;
+    margin: 5rem 20rem;
+    position: relative;
+    width: 400px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    text-align: center;
+    padding-bottom: 75px;
+  }
+  
+  .card > .img-container {
+    height: 60%;
+    overflow: hidden;
+    text-align: center;
+    background:#6CADDC;
+  }
+  .card > .img-container > img {
+    width: 60%
+  }
+  
+  .card > .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 15px;
+  }
+  
+  .card > .content > ul {
+    list-style-type: none;
+  }
+  
+  .card > .content > ul > li {
+    margin-top: 18px;
+  }
+  
+
+  
+  .card > .add:hover {
+    color: #50c532;
+  }
+  

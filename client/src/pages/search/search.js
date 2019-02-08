@@ -3,8 +3,8 @@
 import React, { Component } from 'react';
 // import API from "../utils/API"
 import axios from "axios";
-import "./../pages.css";
 import Cards from "./card";
+import "./search.css";
 
 class Search extends Component {
     state = {
@@ -44,15 +44,15 @@ class Search extends Component {
           console.log("submit log", plants)
         //   plants.forEach(info => console.log(info.name));
 
-
-         
           };
+
 
     
 
     render() {
         return (
-            <div className="search-page">
+            <div className="page-body">
+            <div className="container">
                 <div> Search Page </div>
             <form>
                 <label> Search a plant!</label>
@@ -72,6 +72,7 @@ class Search extends Component {
            name= {plants.name}
            description= {plants.description}/>
            ))}
+           </div>
            </div>
             </div>
         )

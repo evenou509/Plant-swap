@@ -7,7 +7,7 @@ import Search from './pages/search/search';
 import Blog from './pages/blog';
 import Profile from './pages/profile';
 import Contact from './pages/contact';
-import Signup from './pages/signup';
+import Signup from './pages/signup/signup';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import logo from './logo.svg';
 import './App.css';

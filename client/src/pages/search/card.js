@@ -5,10 +5,15 @@ function Cards (props){
     return(
         <div>
         <div className="card card-style" >
-        </div>
          <div className="card-body">
-         <h5 class="card-title">Name: {props.name} </h5>
-         <p class="card-text">Description: {props.description} </p> 
+         <h5 className="card-title">{props.name}</h5>
+         <br/>
+         <p className="card-text">Description:</p> 
+         <p className="card-text">{props.description}</p> 
+         <span >
+        <button className="add"> Add to your List</button>
+      </span>
+         </div>
   </div>
   </div>
 
