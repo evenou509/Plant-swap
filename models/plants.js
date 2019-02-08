@@ -7,14 +7,14 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        plant_name: {
+        plant_id: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        body: {
+        plant_name: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
