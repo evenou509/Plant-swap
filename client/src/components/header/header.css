@@ -4,3 +4,21 @@ header {
     /* background-color: lightgreen; */
     padding: 20px;
 }
+
+#brand{
+    background-color: white;
+    font-family: 'Sacramento', cursive;
+    font-size: 35px;
+    width: 105px;
+}
+
+#nav-css{
+    font-family: 'Cardo', serif;
+    font-size: 20px;
+    background-color: white;
+    margin-left: 5px;
+}
+
+#nav-bar-right{
+    
+}

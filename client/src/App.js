@@ -6,7 +6,7 @@ import Swap from './pages/swap';
 import Search from './pages/search/search';
 import Blog from './pages/blog';
 import Profile from './pages/profile/profile';
-import Contact from './pages/contact';
+import Contact from './pages/contact/contact';
 import Signup from './pages/signup/signup';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import logo from './logo.svg';

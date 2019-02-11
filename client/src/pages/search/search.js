@@ -82,6 +82,7 @@ class Search extends Component {
            <Cards
            name= {plants.name}
            description= {plants.description}
+           key={plants.id}
            onClick={() => this.addPlant(plants)}/>
            
            ))}
