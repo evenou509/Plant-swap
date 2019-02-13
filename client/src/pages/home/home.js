@@ -34,6 +34,13 @@ class Home extends Component {
         const data = { email, password }
         API.signIn(data).then(res => {
           console.log(res)
+          if(res) {
+            console.log(res.data)
+
+            this.props.history.push("/profile")
+            // get information
+            // use the api route to pass data
+        }
         })
     }
 
