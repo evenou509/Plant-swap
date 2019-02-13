@@ -16,7 +16,7 @@ class Contact extends Component {
             <img id="bio-img" alt="Jean Pic" src="/img/jean.jpg"/>
 
             <br/> 
-            <a  href="https://www.linkedin.com/in/jean-fils-aime-b1997482/"><i className="fab fa-github-square fa-3x"></i></a>
+            <a href="https://www.linkedin.com/in/jean-fils-aime-b1997482/"><i className="fab fa-github-square fa-3x"></i></a>
             <a  href="https://www.linkedin.com/in/jean-fils-aime-b1997482/">    <i  className="fab fa-linkedin fa-3x"></i></a>
             </div>
             </div>

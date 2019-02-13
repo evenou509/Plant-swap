@@ -2,8 +2,9 @@ import axios from "axios";
 
 export default {
 //   // Gets all books
-  getUsers: function() {
-    return axios.get("/api/users");
+  signIn: function(data) {
+    // console.log(data)
+    return axios.post("/api/users/signin", data);
   },
 //   // Gets the book with the given id
   getUser: function(id) {
@@ -15,10 +16,10 @@ export default {
 //   },
   // Saves a book to the database
   newUser: function(newUserData) {
-    return axios.post("/api", newUserData);
+    return axios.post("/api/users/register", newUserData);
   },
   // Saves plant to database
   savePlant: function(plantData) {
-    return axios.post("/api", plantData);
+    return axios.post("/api/plant", plantData);
   }
 };

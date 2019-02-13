@@ -53,6 +53,7 @@ class Search extends Component {
 
           const plants =  this.state.plantResults
           console.log("submit log", plants)
+
         //   plants.forEach(info => console.log(info.name));
 
           };
@@ -62,20 +63,25 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="page-body">
+            <div id="page-body" className="page-body">
             <div className="container">
-                <div> Search Page </div>
-            <form>
-                <label> Search a plant!</label>
-                <input
+            <div className="container search-form-cont">
+            <form id="search-form" >
+            <div className="form-group row">
+            
+            <label> <h2>Search a plant!</h2></label>
+      
+            <input  className="form-control search-input"
             value={this.state.search_input}
             name="search_Input"
             onChange={this.handleInputChange}
             type="text"
             placeholder="search here!"
           />
-           <button onClick={this.handleFormSubmit}>Submit</button>
+           <button onClick={this.handleFormSubmit}>Search</button>
+            </div>
             </form>
+            </div>
 
             <div>
            {this.state.plantResults.filter( plants => plants.name === this.state.search_input).map( plants =>(

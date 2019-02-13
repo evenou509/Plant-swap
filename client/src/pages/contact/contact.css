@@ -57,3 +57,7 @@
   font-family: 'Kaushan Script', cursive;
   font-size: 60px;
 }
+
+.bio-card a{
+  color: slategrey;
+}

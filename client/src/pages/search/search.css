@@ -1,5 +1,5 @@
-.page-body{
-    background-color: lightblue;
+#page-body{
+    background: url("../img/iris-2502898_1920.jpg");
     height: 800px;
 }
 
@@ -39,9 +39,19 @@
     margin-top: 18px;
   }
   
+  #search-form{
+    background-color: plum;
+    align-content: center;
+    width: 800px;
 
-  
-  .card > .add:hover {
-    color: #50c532;
   }
+
+  .search-form-cont{
+    align-content: center;
+    width: 1000px;
   
+  }
+
+  .search-input{
+    width: 200px;
+  }

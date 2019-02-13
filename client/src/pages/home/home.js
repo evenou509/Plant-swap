@@ -3,32 +3,39 @@
 // 
 
 import React, { Component } from 'react';
+import API from '../../utils/API'
 
 class Home extends Component {
-    // state = {
-    //     email: '',
-    //     password: '',
-    // }
+    state = {
+        email: '',
+        password: '',
+    }
 
-    // handleInputChange = event => {
-    //     let value = event.target.value;
-    //     const name = event.target.email;
+    handleInputChange = event => {
+        let value = event.target.value;
+        const name = event.target.name;
 
-    //     if(name === "password") {
-    //         value = value.substring(0, 15);
-    //     }
+        if(name === "password") {
+            value = value.substring(0, 15);
+        }
 
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // };
+        this.setState({
+            [name]: value
+        });
+    };
 
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     if(!this.state.email || !this.state.password){
-    //         alert("Your email and password do not match")
-    //     }
-    // }
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if(!this.state.email || !this.state.password){
+            alert("Your email and password do not match")
+            return false
+        }
+        const { email, password } = this.state
+        const data = { email, password }
+        API.signIn(data).then(res => {
+          console.log(res)
+        })
+    }
 
     render() {
         return(
@@ -36,12 +43,12 @@ class Home extends Component {
         {/* <p>
           Hello {this.state.firstName} {this.state.lastName}
         </p> */}
-        {/* <form className="form">
+        <form className="form">
           <input
             value={this.state.email}
-            name="Email"
+            name="email"
             onChange={this.handleInputChange}
-            type="text"
+            type="email"
             placeholder="Email"
           />
           <input
@@ -52,8 +59,8 @@ class Home extends Component {
             placeholder="Password"
           />
           <button onClick={this.handleFormSubmit}>Submit</button>
-          <button onClick>Sign Up</button>
-        </form> */}
+          <a href="/signup" className="button">Sign up!</a>
+        </form>
 
 
         <section className="section">
