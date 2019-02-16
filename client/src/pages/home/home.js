@@ -1,14 +1,12 @@
-// create links to the swap page
-// create about app section
-// 
-
 import React, { Component } from 'react';
 import API from '../../utils/API'
+import "./home.css"
 
 class Home extends Component {
     state = {
         email: '',
         password: '',
+        success: '',
     }
 
     handleInputChange = event => {
@@ -26,31 +24,41 @@ class Home extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-        if(!this.state.email || !this.state.password){
-            alert("Your email and password do not match")
-            return false
-        }
+
         const { email, password } = this.state
         const data = { email, password }
         API.signIn(data).then(res => {
-          console.log(res)
-          if(res) {
-            console.log(res.data)
-
-            this.props.history.push("/profile")
+          console.log(res.data)
+          if(!res.data) {
+            alert("Your email and password do not match")
+           
             // get information
             // use the api route to pass data
+        } else {
+           localStorage.setItem('user', this.state.email)
+            console.log(localStorage)
+
+            this.props.history.push("/profile")
         }
         })
     }
 
     render() {
         return(
-            <div>
-        {/* <p>
-          Hello {this.state.firstName} {this.state.lastName}
-        </p> */}
-        <form className="form">
+            <div className="home-body">
+          <div className="container">
+ 
+          <div className="home-holder">
+        <section className="section">
+      <h2>Welcome to Let's Garden</h2>
+      <p>
+      Are you new to gardening and need help on when to water your plants? Are you a gardening expert and want to share some of your extra seedlings? Well you’ve come to right place….. Let’s Garden!!!
+      </p>
+      
+    </section>
+
+
+    <form className="form">
           <input
             value={this.state.email}
             name="email"
@@ -65,45 +73,11 @@ class Home extends Component {
             type="password"
             placeholder="Password"
           />
-          <button onClick={this.handleFormSubmit}>Submit</button>
-          <a href="/signup" className="button">Sign up!</a>
+          <button onClick={this.handleFormSubmit}>Sign In</button>
+          <a href="/signup"  className="btn bth-primary">Sign up!</a>
         </form>
-
-
-        <section className="section">
-      <h2>Lorem Ipsum Dolor Sit Amet</h2>
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-        architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-        dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-        exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-        consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-        molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-        voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-        cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
-        est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam
-        libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod
-        maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
-        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut
-        et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a
-        sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis
-        doloribus asperiores repellat.
-      </p>
-    </section>
+        </div>
+        </div>
       </div>
         )
     }

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Header from './components/header/header';
+// import Header from './components/header/header';
 // import SignIn from './components/Route/home/signin';
 import Home from './pages/home/home';
-import Swap from './pages/swap';
 import Search from './pages/search/search';
-import Blog from './pages/blog';
 import Profile from './pages/profile/profile';
 import Contact from './pages/contact/contact';
 import Signup from './pages/signup/signup';
@@ -18,12 +16,9 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-        <Header/>
       
         <Route exact path="/" component={Home} />
-        <Route exact path="/swap" component={Swap} />
         <Route exact path="/search" component={Search} />
-        <Route path="/blog" component={Blog} />
         <Route path="/profile" component={Profile} />
         <Route path="/contact" component={Contact} />
         <Route exact path="/signup" component={Signup} />

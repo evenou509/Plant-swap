@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-// import Cards from "./bioHolder";
+import Header from '../../components/header/header'
 import "./contact.css";
 
 class Contact extends Component {
     render() {
         return (
+            <div>
+                <Header/>
+            
             <div className="contact-body"> 
             <div className="container">
             <h2 id="h2-bio"> Our Team</h2>
@@ -17,7 +20,7 @@ class Contact extends Component {
 
             <br/> 
             <a href="https://www.linkedin.com/in/jean-fils-aime-b1997482/"><i className="fab fa-github-square fa-3x"></i></a>
-            <a  href="https://www.linkedin.com/in/jean-fils-aime-b1997482/">    <i  className="fab fa-linkedin fa-3x"></i></a>
+            <a  href="https://www.linkedin.com/in/jean-fils-aime-b1997482/">    <i className="fab fa-linkedin fa-3x"></i></a>
             </div>
             </div>
             <div className="bio-holder md-5">
@@ -34,6 +37,7 @@ class Contact extends Component {
             </div>
          
               
+</div>
 </div>
 </div>
         )

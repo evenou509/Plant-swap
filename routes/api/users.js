@@ -6,11 +6,9 @@ router.route("/register")
   .post(userController.create);
 
 //   // route to sign up new user
-router.route("/")
-.post(userController.findById);
+router.route("/profile")
+.post(userController.findUser);
 
-
-// Matches with "/api/user/:id"
 router.route("/signin")
 .post(userController.findAll)
 //   .get(userController.findById)
