@@ -12,10 +12,10 @@ function Cards (props){
          <p className="card-text">{props.watering}</p> 
          <p className="card-text">Stay away from {props.pests}</p>
          <span >
-        <button className="add btn btn-outline-dark" {...props} > Add to your List</button>
-        {/* <br/>
+        <button className="add btn btn-outline-dark" {...props} > Add to your Garden</button>
         <br/>
-        <button className="swap btn btn-outline-dark" {...props} > Request Swap</button> */}
+        <br/>
+        <button className="swap btn btn-outline-dark" {...props} > Request Swap</button>
       </span>
          </div>
   </div>

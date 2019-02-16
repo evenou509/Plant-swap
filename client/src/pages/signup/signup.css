@@ -4,6 +4,8 @@
 }
 
 .holder{
-    background: rgb(167, 172, 247);
-    padding: 100px;
+    background: #a29bfe;
+    padding: 90px;
+    width: 550px;
+    border-radius: 10px;
 }

@@ -94,7 +94,7 @@ class Profile extends Component {
             <h3> Hey there, {this.state.first_name}! </h3>
             </div>
             <div className="row">
-            <h3> Current Location : {this.state.zipCode}</h3>
+            <h3>Location: Deltona, FL {this.state.zipCode}</h3>
             </div>
             <div className="row">
             <h3> Headline : {this.state.about}</h3>

@@ -44,7 +44,7 @@ class Signup extends Component {
       <div className="page-body">
       <div className="container">
       <div className="holder container">
-      <h3 className="row col-md-6" style={{marginLeft:215}}> Sign up! </h3>
+      <h3 className="row col-md-6" style={{marginLeft:95}}> Sign up! </h3>
       <br/>
         <form className="form">
           <div className="form-row">
