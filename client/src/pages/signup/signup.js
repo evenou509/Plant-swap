@@ -32,12 +32,11 @@ class Signup extends Component {
       zipCode: this.state.zipCode,
       about: this.state.about
     }).then(
-      console.log("New User submitted")
+      console.log("New User submitted"),
+
+      this.props.history.push("/")
     ) 
-    // .catch(err => console.log(err));
-    // if (!this.state.email || !this.state.password) {
-    //   alert("Your email and password do not match")
-    // }
+
   }
 
   render() {
@@ -45,6 +44,8 @@ class Signup extends Component {
       <div className="page-body">
       <div className="container">
       <div className="holder container">
+      <h3 className="row col-md-6" style={{marginLeft:95}}> Sign up! </h3>
+      <br/>
         <form className="form">
           <div className="form-row">
           <div className="col-md-5 mb-3">
@@ -73,7 +74,7 @@ class Signup extends Component {
           <div className="col-md-5 mb-3">
             <input className="form-control"
             value={this.state.email}
-            name="Email"
+            name="email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Email"
@@ -106,13 +107,18 @@ class Signup extends Component {
             name="about"
             onChange={this.handleInputChange}
             type="about"
-            placeholder="About"
+            placeholder="Headline"
           />
           </div>
           </div>
+          <span>
           <button type="button" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
-          
+          <a href="/"  className="btn bth-primary">Return Home!</a>
+          </span>
         </form>
+        <br/>
+        
+
         </div>
         </div>
       </div>

@@ -2,13 +2,15 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 // route to sign up new user
-router.route("/")
+router.route("/register")
   .post(userController.create);
 
-// Matches with "/api/user/:id"
-router
-  .route("/users")
-  .get(userController.findAll)
+//   // route to sign up new user
+router.route("/profile")
+.post(userController.findUser);
+
+router.route("/signin")
+.post(userController.findAll)
 //   .get(userController.findById)
   .put(userController.update);
 

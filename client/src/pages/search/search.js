@@ -4,15 +4,26 @@ import React, { Component } from 'react';
 import API from "../../utils/API"
 import axios from "axios";
 import Cards from "./card";
+// import {AddItem, RequestIem} from "./buttons"
+import Header from '../../components/header/header';
 import "./search.css";
 
 class Search extends Component {
     state = {
         search_input: "",
         plantResults: [],
-        error: ""
+        error: "",
+        user: "",
+        id: ""
       };
     componentDidMount() {
+
+      console.log(localStorage)
+      console.log(localStorage.id)
+      const currentId = localStorage.id
+      this.setState({id: currentId})
+
+      console.log(currentId)
         axios.get("http://harvesthelper.herokuapp.com/api/v1/plants?api_key=9bbe0cb9fc09ec115e66e1a2908a4d9e")
         .then((result) => {
             this.setState({
@@ -30,8 +41,12 @@ class Search extends Component {
 
       addPlant = plants => {
         // event.preventDefault();
+        console.log(localStorage.id)
+        const currentId = localStorage.id
+        console.log(plants.id)
+        console.log(currentId)
         API.savePlant({
-          user_id: "1",
+          user_id: currentId,
           plant_id: plants.id,
           plant_name: plants.name
         }).then(
@@ -53,6 +68,7 @@ class Search extends Component {
 
           const plants =  this.state.plantResults
           console.log("submit log", plants)
+
         //   plants.forEach(info => console.log(info.name));
 
           };
@@ -62,31 +78,42 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="page-body">
-            <div className="container">
-                <div> Search Page </div>
-            <form>
-                <label> Search a plant!</label>
-                <input
+          <div>
+            <Header/>
+          
+            <div id="page-body" className="page-body">
+            <div className="">
+            <div className="search-form-cont">
+            <form id="search-form" >
+            <div className="form-group row">
+            
+            <label id="search-label"> <h3>Search a plant!</h3></label>
+            <input  className="form-control search-input"
             value={this.state.search_input}
             name="search_Input"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="search here!"
+            placeholder="Kale..."
           />
-           <button onClick={this.handleFormSubmit}>Submit</button>
+           <button className="btn btn-outline-dark btn-search" onClick={this.handleFormSubmit}>Search</button>
+            </div>
             </form>
+            </div>
 
             <div>
            {this.state.plantResults.filter( plants => plants.name === this.state.search_input).map( plants =>(
            <Cards
            name= {plants.name}
            description= {plants.description}
+           watering= {plants.watering}
+           pests= {plants.pests}
+           key={plants.id}
            onClick={() => this.addPlant(plants)}/>
            
            ))}
            </div>
            </div>
+            </div>
             </div>
         )
     }

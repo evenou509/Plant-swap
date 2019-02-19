@@ -4,8 +4,8 @@ const plantRoutes = require("./plant");
 
 
 // Book routes
-router.use("/", userRoutes);
+router.use("/users", userRoutes);
 
-router.use("/", plantRoutes);
+router.use("/plant", plantRoutes);
 
 module.exports = router;

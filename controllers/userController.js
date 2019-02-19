@@ -6,14 +6,24 @@ const db = require("../models");
 // Defining methods for the booksController
 module.exports = {
   findAll: function(req, res) {
+    const { email, password } = req.body
+    console.log(email, password)
     db.User
-      .find(req.query)
+      .findOne({
+        where: {
+          email,
+          password,
+        }
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+  findUser: function(req, res) {
+    const  email = req.body.email
+    console.log("this is find user")
+    console.log(email)
     db.User
-      .findById(req.params.id)
+      .findOne( req.params.email)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
